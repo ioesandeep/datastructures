@@ -144,30 +144,25 @@ public class SingleLinkedList {
         try {
             Node before = before(node);
             before.next = newNode;
+            ++size;
         } catch (NodeIsHeadException e) {
             head = newNode;
+            ++size;
         }
         return newNode;
     }
 
     public boolean remove(Node node) throws ListIsEmptyException, NodeNotInListException {
-        if (node == first()) {
-            head = null;
-            --size;
-            return true;
+        try {
+            Node before = before(node);
+            before.next = node.next;
+        } catch (NodeIsHeadException e) {
+            node = node.next;
+            head = node;
         }
 
-        Node start = head;
-        while (start != null) {
-            if (start.next == node) {
-                start.next = start.next.next;
-                --size;
-                return true;
-            }
-            start = start.next;
-        }
-
-        return false;
+        --size;
+        return true;
     }
 
     public boolean swapElements(Node p, Node q) throws NodeNotInListException, ListIsEmptyException {
@@ -182,6 +177,12 @@ public class SingleLinkedList {
             q.next = next;
         }
         return true;
+    }
+
+    public Node replaceElement(Node src, Node dest) {
+        src.data = dest.data;
+        src.next = dest.next;
+        return src;
     }
 
     public String toString() {
