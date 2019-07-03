@@ -1,5 +1,6 @@
 package com.mum.algorithms;
 
+import com.mum.algorithms.linkedlist.SingleLinkedList;
 import com.mum.algorithms.linkedlist.SinglyLinkedList;
 
 import com.mum.algorithms.queue.ArrayQueue;
@@ -9,6 +10,7 @@ import com.mum.algorithms.queue.exception.QueueIsFullException;
 import com.mum.algorithms.stack.ArrayStack;
 import com.mum.algorithms.stack.exception.StackEmptyException;
 import com.mum.algorithms.stack.exception.StackOverflowException;
+import com.mum.algorithms.vector.ArrayVector;
 
 public class Main {
 
@@ -90,9 +92,50 @@ public class Main {
         }
     }
 
+    public static void vectorTest() {
+        try {
+            ArrayVector<Integer> vector = new ArrayVector<>(10);
+            vector.insertAtRank(0, 90);
+            vector.insertAtRank(1, 20);
+            vector.insertAtRank(2, 32);
+            vector.insertAtRank(3, 24);
+            vector.insertAtRank(4, 23);
+            vector.insertAtRank(5, 12);
+            vector.insertAtRank(7, 45);
+            vector.insertAtRank(6, 54);
+            vector.insertAtRank(8, 63);
+            vector.insertAtRank(7, 34);
+            vector.insertAtRank(8, 36);
+            vector.insertAtRank(9, 36);
+            System.out.println(vector);
+            System.out.println(vector.getSize());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void singleLinkedListTest() {
+        try {
+            SingleLinkedList list = new SingleLinkedList();
+            System.out.println(list.insertFirst(20));
+            System.out.println(list.insertFirst(30));
+            System.out.println(list.insertLast(40));
+            SingleLinkedList.Node node = list.insertLast(54);
+            node = list.insertBefore(node, 23);
+            SingleLinkedList.Node node1 = list.insertAfter(node, 36);
+            list.swapElements(node,node1);
+            list.remove(node1);
+            System.out.println(list);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     public static void main(String[] args) {
 //        Main.linkedListTest();
 //        Main.fixedStackTest();
-        Main.fixedQueueTest();
+//        Main.fixedQueueTest();
+//        Main.vectorTest();
+        Main.singleLinkedListTest();
     }
 }
