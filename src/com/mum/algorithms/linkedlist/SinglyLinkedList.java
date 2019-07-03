@@ -1,10 +1,16 @@
-package com.mum.algorithms;
+package com.mum.algorithms.linkedlist;
 
-public class LinkedList<T> {
+/**
+ * A simple single linked list
+ * find, insert and remove take O(n)
+ *
+ * @param <T>
+ */
+public class SinglyLinkedList<T> {
     public Node<T> head;
     public int size;
 
-    public LinkedList() {
+    public SinglyLinkedList() {
         size = 0;
     }
 
@@ -109,7 +115,7 @@ public class LinkedList<T> {
         return true;
     }
 
-    public LinkedList<T> sorted() {
+    public SinglyLinkedList<T> sorted() {
         return null;
     }
 

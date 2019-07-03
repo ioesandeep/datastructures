@@ -1,5 +1,13 @@
-package com.mum.algorithms;
+package com.mum.algorithms.queue;
 
+import com.mum.algorithms.queue.exception.QueueIsEmptyException;
+import com.mum.algorithms.queue.exception.QueueIsFullException;
+
+/**
+ * A simple array based implementation of a queue
+ * Runtime for enqueue and dequeue is O(1)
+ * @param <T>
+ */
 public class ArrayQueue<T> {
     int rear;
     int front;

@@ -1,7 +1,7 @@
-package com.mum.algorithms;
+package com.mum.algorithms.queue.exception;
 
 public class QueueIsEmptyException extends Throwable {
-    QueueIsEmptyException(){
+    public QueueIsEmptyException(){
         super("Queue is empty");
     }
 }

@@ -1,9 +1,19 @@
 package com.mum.algorithms;
 
+import com.mum.algorithms.linkedlist.SinglyLinkedList;
+
+import com.mum.algorithms.queue.ArrayQueue;
+import com.mum.algorithms.queue.exception.QueueIsEmptyException;
+import com.mum.algorithms.queue.exception.QueueIsFullException;
+
+import com.mum.algorithms.stack.ArrayStack;
+import com.mum.algorithms.stack.exception.StackEmptyException;
+import com.mum.algorithms.stack.exception.StackOverflowException;
+
 public class Main {
 
     public static void linkedListTest() {
-        LinkedList<Integer> list = new LinkedList<>();
+        SinglyLinkedList<Integer> list = new SinglyLinkedList<>();
         list.insert(20);
         list.insert(30);
         list.insert(50);

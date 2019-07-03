@@ -1,5 +1,14 @@
-package com.mum.algorithms;
+package com.mum.algorithms.stack;
 
+import com.mum.algorithms.stack.exception.StackEmptyException;
+import com.mum.algorithms.stack.exception.StackOverflowException;
+
+/**
+ * Simple array based stack implementation
+ * with O(1) runtime for push and pop
+ *
+ * @param <T>
+ */
 public class ArrayStack<T> {
     private int size;
     private int maxSize;
